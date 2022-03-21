@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.6"
+  },
+  "name": "prints-project",
+  "version": "1.0.0",
+  "description": "This is the project for printing company",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuslanabubakar/prints-project.git"
+  },
+  "keywords": [
+    "node.js",
+    "express",
+    "mongodb",
+    "react.js",
+    "printing"
+  ],
+  "author": "megatren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuslanabubakar/prints-project/issues"
+  },
+  "homepage": "https://github.com/yuslanabubakar/prints-project#readme"
+}
