@@ -1,3 +1,6 @@
+const db = require("../models");
+const User = db.user;
+
 exports.allAccess = (req, res) => {
     res.status(200).send("Public Content.");
   };
@@ -12,4 +15,14 @@ exports.allAccess = (req, res) => {
   
   exports.moderatorBoard = (req, res) => {
     res.status(200).send("Moderator Content.");
+  };
+
+  exports.getAllUsers = (req, res) => {
+    User.find({}, function(err, result) {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+      res.status(200).send(result)
+    }).select(['-password']);
   };
