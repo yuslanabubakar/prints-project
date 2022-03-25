@@ -1,4 +1,5 @@
 const db = require("../models");
+const userRoutes = require("../routes/user.routes");
 const User = db.user;
 
 exports.allAccess = (req, res) => {
@@ -25,4 +26,14 @@ exports.allAccess = (req, res) => {
       }
       res.status(200).send(result)
     }).select(['-password']);
+  };
+
+  exports.setQuotas = (req, res) => {
+    User.findByIdAndUpdate({_id: req.body.id} , {quota: req.body.quota}, function(err, result) {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+      res.status(200).send("Successfull to update quotas");
+    })
   };

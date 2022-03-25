@@ -25,4 +25,9 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.getAllUsers
   );
+  app.post(
+    "/api/test/setQuotas",
+    [authJwt.verifyToken, authJwt.isAdmin],
+    controller.setQuotas
+  );
 };
