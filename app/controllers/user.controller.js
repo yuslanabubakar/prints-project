@@ -1,10 +1,12 @@
 const db = require("../models");
 const userRoutes = require("../routes/user.routes");
 const User = db.user;
+const printer = require("@thiagoelg/node-printer")
+const util = require("util")
 
-exports.allAccess = (req, res) => {
-    res.status(200).send("Public Content.");
-  };
+  exports.allAccess = (req, res) => {
+      res.status(200).send("Public Content.");
+    };
 
   exports.userBoard = (req, res) => {
     res.status(200).send("User Content.");
@@ -36,4 +38,8 @@ exports.allAccess = (req, res) => {
       }
       res.status(200).send("Successfull to update quotas");
     })
+  };
+
+  exports.getPrinters = (req, res) => {
+    res.status(200).send("installed printers:\n"+util.inspect(printer.getPrinters(), {colors:true, depth:10}))
   };
