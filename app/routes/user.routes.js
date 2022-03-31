@@ -45,4 +45,10 @@ module.exports = function(app) {
     controller.getPrinters
   );
 
+  app.get(
+    "/api/test/learn",
+    [authJwt.verifyToken, authJwt.isAdmin],
+    controller.getPrinters
+  );
+
 };
